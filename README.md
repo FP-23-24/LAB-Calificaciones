@@ -1,5 +1,5 @@
 # LAB-calificaciones
-**Autor**: Toñi Reina **Revisores**:   **Fecha última modificación**: 22/09/2023
+**Autor**: Toñi Reina **Revisores**: Alfonso Bengoa, Fermín Cruz  **Fecha última modificación**: 22/09/2023
 
 Crea tres módulos en un proyecto Python (`calificaciones.py`,`calificaciones_test.py` y `calificaciones_ui.py`) e implementa los siguientes ejercicios. Separa la definición de las funciones, incluyéndolas en el módulo `calificaciones.py`, de la invocación para probar esas funciones, incluyéndolas en el módulo `calificaciones_test.py`.
 
@@ -10,25 +10,22 @@ Se quiere ayudar a los alumnos de Fundamentos de Programación a calcular su not
 
 #### Apartado a
 
-Escribe una función en el módulo 'calificaciones'  llamada `nota_teoria` que, dadas las notas de los dos exámenes teóricos de un cuatrimestre, permita calcular la nota que un alumno tiene en el bloque teórico de ese cuatrimestre. La nota se
-calcula como la media de las notas de ambos cuatrimestres. Una nota con valor None indica que el alumno no se ha presentado al examen, y se considerará como un cero.
+Escribe una función en el módulo 'calificaciones'  llamada `nota_teoria` que, dadas las notas de los dos exámenes teóricos de un cuatrimestre, permita calcular la nota que un alumno tiene en el bloque teórico de ese cuatrimestre. La nota se calcula como la media de las notas de ambos cuatrimestres. Una nota con valor None indica que el alumno no se ha presentado al examen, y se considerará como un cero.
 
 _Pruebas_:
 Pruebe la función en el módulo `calificaciones_test` con los siguientes valores, siendo los dos números que están antes de la flecha las notas del primer y segundo exámen teórico, respectivamente, y el valor situado a la derecha de la flecha la nota obtenida.
 ```
 9.1, 7.2 ==> 8.15
 4.0, 6.0 ==> 5.0
-4.0, 3.0 ==> 0
-None, 3.0 ==>0
+4.0, 3.0 ==> 3.5
+None, 3.0 ==>1.5
 9.0, None ==> 4.5
 ```
 
 #### Apartado b
 
-Escribe una función en el módulo 'calificaciones' llamada `nota_cuatrimestre` que, dadas una tupla con las notas de los exámenes teóricos de un cuatrimestre, y la nota del exámen práctico,
-devuelva la nota obtenida en ese cuatrimestre. La nota del cuatrimestre,  siempre que la media de los dos cuestionarios teóricos
-sea superior o igual a 4, se calcula como 0,1* (T1+T2) + 0,8 * P, siendo  T1 y T2 las notas de los dos exámenes teóricos
-y P la nota del examen práctico. Si la media no es superior a 4, la nota del cuatrimestre es 0. Un valor None en una nota indica que el alumno no se ha presentado al examen, y se considerará como un cero.
+Escribe una función en el módulo 'calificaciones' llamada `nota_cuatrimestre` que, dadas una tupla con dos elementos (las notas de los exámenes teóricos de un cuatrimestre), y la nota del exámen práctico,
+devuelva la nota obtenida en ese cuatrimestre. La nota del cuatrimestre,  siempre que la media de los dos cuestionarios teóricos sea superior o igual a 4, se calcula como 0,1* (T1+T2) + 0,8 * P, siendo  T1 y T2 las notas de los dos exámenes teóricos y P la nota del examen práctico. Si la media no es superior a 4, la nota del cuatrimestre es 0. Un valor None en una nota indica que el alumno no se ha presentado al examen, y se considerará como un cero.
 
 _Pruebas_:
 Pruebe la función en el módulo `calificaciones_test` con los siguientes valores, siendo los números situados a la izquierda de la flecha las notas del primer examen teórico, del segundo y del examen práctico, respectivamente. La nota obtenida es el número situado a la derecha de la flecha.
@@ -56,8 +53,8 @@ Pruebe la función en el módulo `calificaciones_test` con los siguientes valore
 
 #### Apartado d
 
-Escribe una función en el módulo 'calificaciones_ui' llamada `solicita_notas` que solicite por teclado el nombre de un estudiante, las notas de los cuestionarios de teoría y la de los exámenes
-prácticos y devuelva una tupla con todos los datos leídos.  Implementa una segunda función llamada mostrar_notas que tome como entrada una tupla con los datos leidos por teclado y los muestre por consola.
+Escribe una función en el módulo 'calificaciones_ui' llamada `solicita_notas` que solicite por teclado el nombre de un estudiante, las notas de los 4 cuestionarios de teoría y la de los 2 exámenes
+prácticos y devuelva una tupla con todos los datos leídos (los campos de la tupla deben estar en el mismo orden en el que se han leído).  Implementa una segunda función llamada mostrar_notas que tome como entrada una tupla con los datos leidos por teclado y los muestre por consola.
 
 En el mismo módulo invoque a estas funciones para solicitar a un usuario sus notas, y mostrarle sus resultados por consola, de la siguiente forma:
 
@@ -82,4 +79,3 @@ Tus notas del segundo cuatrimestre son:
  teoria 5.8, práctica 5.0, cuatrimestre 5.16
 Tu nota final de la asignatura es 5.735
 ```
-
